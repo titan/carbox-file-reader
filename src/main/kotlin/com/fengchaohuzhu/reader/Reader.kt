@@ -26,15 +26,15 @@ public fun getIndexByPath(path: String): MutableList<Index> {
 }
 
 public fun getIndexByContent(content: String): MutableList<Index> {
-  val  strarr = content.split("\n")
+  val strarr = content.split("\n")
   val new_strarr = strarr.filter(::notNull)
   var list = mutableListOf<Index>()
-  for(i in 0..new_strarr.size-1) {
+  for (i in 0..new_strarr.size-1) {
     if(i == 0) {
       var strarray: List<String> = new_strarr.get(i).split("|")
       val index = Index(filename = strarray.get(0), checkSum = strarray.get(1), size = (strarray.get(2)).toInt())
       list.add(index)
-    }else {
+    } else {
       var strarray: List<String> = new_strarr.get(i).split("|")
       val index = Index(url = strarray.get(0), checkSum = strarray.get(1), size = (strarray.get(2)).toInt())
       list.add(index)
