@@ -1,4 +1,4 @@
-package com.fengchaohuzhu.box.Parser
+package box.Parser
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -12,7 +12,7 @@ fun notNull(str: String) =str !=""
 
 public fun main(args: Array<String>) {
   println("Reader")
-  val filename = """/home/luofei/Works/text.txt"""
+  val filename = """text.txt"""
   val res = getIndexByPath(filename)
   println(res)
 }
